@@ -3,258 +3,650 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Kapunka Aceite de Argán</title>
-    <meta name="description" content="Descubre los últimos artículos sobre aceites naturales, cuidado de la piel y tratamientos estéticos en el blog de Kapunka.">
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description" content="Blog de Kapunka - Descubre los secretos del aceite de argán médico-estético, tendencias en belleza de lujo y consejos de expertos.">
+    <meta name="keywords" content="blog Kapunka, aceite de argán, belleza de lujo, cuidado de la piel, tendencias estéticas, consejos de expertos">
+    <title>Kapunka - Blog</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+    <!-- Additional CSS for Blog Page -->
+    <style>
+        /* Blog-specific enhancements */
+        .blog-hero {
+            background: linear-gradient(135deg, 
+                rgba(10, 10, 10, 0.9), 
+                rgba(26, 26, 26, 0.8)), 
+                url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+        }
+        
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            color: var(--pure-white);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-family: var(--font-secondary);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.875rem;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--moroccan-gold);
+            color: var(--midnight-black);
+            border-color: var(--moroccan-gold);
+            transform: translateY(-2px);
+        }
+        
+        .blog-grid {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+        }
+        
+        .blog-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(10, 10, 10, 0.95));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            transition: all var(--transition-medium);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--moroccan-gold), var(--champagne));
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--moroccan-gold);
+        }
+        
+        .blog-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-medium);
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-category {
+            position: absolute;
+            top: var(--spacing-md);
+            left: var(--spacing-md);
+            background: var(--moroccan-gold);
+            color: var(--midnight-black);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 1;
+        }
+        
+        .blog-content {
+            padding: var(--spacing-lg);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+        }
+        
+        .blog-meta i {
+            color: var(--moroccan-gold);
+        }
+        
+        .blog-title {
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--pure-white);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.3;
+        }
+        
+        .blog-excerpt {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-md);
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+        
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--moroccan-gold), #B8941F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--midnight-black);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .author-info {
+            flex-grow: 1;
+        }
+        
+        .author-name {
+            color: var(--pure-white);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .author-role {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+        }
+        
+        .featured-post {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+        
+        .featured-post .blog-image {
+            height: 400px;
+        }
+        
+        .featured-post .blog-content {
+            padding: var(--spacing-xl);
+        }
+        
+        .featured-post .blog-title {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .newsletter-section {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(10, 10, 10, 0.95));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--moroccan-gold), var(--champagne));
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: var(--spacing-lg) auto 0;
+            gap: var(--spacing-sm);
+        }
+        
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: var(--border-radius-sm);
+            color: var(--pure-white);
+            font-family: var(--font-secondary);
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--moroccan-gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .blog-sidebar {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(10, 10, 10, 0.95));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            height: fit-content;
+            position: sticky;
+            top: var(--spacing-xl);
+        }
+        
+        .sidebar-title {
+            font-family: var(--font-primary);
+            font-size: 1.25rem;
+            color: var(--pure-white);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .sidebar-list {
+            list-style: none;
+        }
+        
+        .sidebar-list li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .sidebar-list a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .sidebar-list a:hover {
+            color: var(--moroccan-gold);
+        }
+        
+        .sidebar-list a i {
+            color: var(--moroccan-gold);
+            font-size: 0.75rem;
+        }
+        
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-md);
+        }
+        
+        .tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--moroccan-gold);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all var(--transition-fast);
+        }
+        
+        .tag:hover {
+            background: var(--moroccan-gold);
+            color: var(--midnight-black);
+        }
+        
+        @media (max-width: 1024px) {
+            .featured-post {
+                grid-column: span 1;
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-post .blog-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .blog-sidebar {
+                margin-top: var(--spacing-lg);
+                position: static;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Luxury Header -->
     <header class="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Kapunka</a>
-            
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="productos.html" class="nav-link">Productos</a></li>
-                    <li><a href="profesionales.html" class="nav-link">Profesionales</a></li>
-                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
-                    <li><a href="about.html" class="nav-link">Nosotros</a></li>
-                </ul>
-            </nav>
-            
-            <div class="nav-actions">
-                <a href="tel:+34637520704" class="nav-icon">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="https://wa.me/34637520704" class="nav-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#" class="nav-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </a>
-                <a href="#" class="nav-icon">
-                    <i class="fas fa-user"></i>
-                </a>
-                <div class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">KAPUNKA</a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Inicio</a></li>
+                        <li><a href="productos.html" class="nav-link">Productos</a></li>
+                        <li><a href="profesionales.html" class="nav-link">Profesionales</a></li>
+                        <li><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
-        <div class="container hero-content">
-            <h1>Blog Kapunka</h1>
-            <p>Consejos de expertos, novedades y todo lo que necesitas saber sobre el cuidado de la piel con aceites naturales.</p>
-        </div>
-    </section>
-
-    <!-- Blog Categories -->
-    <section class="blog-categories section">
+    <!-- Blog Hero Section -->
+    <section class="hero blog-hero">
         <div class="container">
-            <div class="category-tabs">
-                <button class="category-tab active" data-category="all">Todos</button>
-                <button class="category-tab" data-category="consejos">Consejos</button>
-                <button class="category-tab" data-category="tratamientos">Tratamientos</button>
-                <button class="category-tab" data-category="novedades">Novedades</button>
-                <button class="category-tab" data-category="profesionales">Profesionales</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Article -->
-    <section class="featured-article section">
-        <div class="container">
-            <div class="featured-content">
-                <div class="featured-image">
-                    <img src="https://via.placeholder.com/800x400" alt="Artículo destacado">
-                    <div class="featured-badge">Artículo Destacado</div>
-                </div>
-                <div class="featured-info">
-                    <div class="article-meta">
-                        <span class="article-category">Tratamientos</span>
-                        <span class="article-date">15 de mayo, 2024</span>
-                    </div>
-                    <h2 class="article-title">Cómo el Aceite de Argán Ayuda en la Recuperación Post-Quirúrgica</h2>
-                    <p class="article-excerpt">Descubre cómo el aceite de argán Kapunka acelera la recuperación tras procedimientos quirúrgicos y tratamientos estéticos, reduciendo la inflamación y mejorando la regeneración celular.</p>
-                    <div class="article-author">
-                        <img src="https://via.placeholder.com/50x50" alt="Mónica Ruiz">
-                        <div>
-                            <span class="author-name">Mónica Ruiz</span>
-                            <span class="author-role">Fundadora</span>
-                        </div>
-                    </div>
-                    <a href="#" class="btn btn-primary">Leer Artículo Completo</a>
+            <div class="hero-content">
+                <h1>Blog Kapunka</h1>
+                <p>Descubre los secretos del aceite de argán médico-estético, tendencias en belleza de lujo y consejos de expertos.</p>
+                <div class="hero-buttons">
+                    <a href="#featured" class="btn btn-primary">Artículo Destacado</a>
+                    <a href="#all-posts" class="btn btn-outline">Explorar Blog</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Blog Grid -->
-    <section class="blog-grid-section section">
+    <!-- Category Filter -->
+    <section class="filter-section section">
         <div class="container">
-            <div class="blog-grid">
-                <!-- Article 1 -->
-                <article class="blog-card" data-category="consejos">
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/400x250" alt="Beneficios del aceite de argán">
-                    </div>
-                    <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">Consejos</span>
-                            <span class="article-date">10 de mayo, 2024</span>
-                        </div>
-                        <h3 class="blog-title">5 Beneficios del Aceite de Argán para tu Piel que Debes Conocer</h3>
-                        <p class="blog-excerpt">El aceite de argán es un tesoro de la naturaleza con múltiples beneficios para la piel. Descubre los 5 principales beneficios que transformarán tu rutina de cuidado.</p>
-                        <div class="blog-author">
-                            <img src="https://via.placeholder.com/50x50" alt="Mónica Ruiz">
-                            <div>
-                                <span class="author-name">Mónica Ruiz</span>
-                                <span class="author-role">Fundadora</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-outline">Leer Más</a>
-                    </div>
-                </article>
+            <div class="category-filter">
+                <button class="filter-btn active">Todos los Artículos</button>
+                <button class="filter-btn">Tendencias</button>
+                <button class="filter-btn">Cuidado de la Piel</button>
+                <button class="filter-btn">Ingredientes</button>
+                <button class="filter-btn">Profesionales</button>
+                <button class="filter-btn">Estilo de Vida</button>
+            </div>
+        </div>
+    </section>
 
-                <!-- Article 2 -->
-                <article class="blog-card" data-category="tratamientos">
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/400x250" alt="Tratamiento facial con aceite de argán">
+    <!-- Featured Post -->
+    <section class="featured-post-section section" id="featured">
+        <div class="container">
+            <div class="featured-post blog-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Artículo destacado">
+                    <div class="blog-category">Tendencias</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 15 Mayo 2024</span>
+                        <span><i class="fas fa-clock"></i> 8 min lectura</span>
                     </div>
-                    <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">Tratamientos</span>
-                            <span class="article-date">5 de mayo, 2024</span>
+                    <h2 class="blog-title">El Futuro del Cuidado de la Piel: Cómo el Aceite de Argán está Revolucionando la Industria Médico-Estética</h2>
+                    <p class="blog-excerpt">Exploramos cómo el aceite de argán médico-estético está transformando los tratamientos faciales y corporales en clínicas de lujo de toda Europa. Desde la ciencia detrás de sus propiedades hasta los resultados clínicos comprobados.</p>
+                    <div class="blog-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <div class="author-name">Mónica Ruiz</div>
+                            <div class="author-role">Fundadora & Directora Científica</div>
                         </div>
-                        <h3 class="blog-title">Rutina Facial Nocturna con Aceite de Argán para una Piel Radiante</h3>
-                        <p class="blog-excerpt">Aprende a crear una rutina facial nocturna efectiva con aceite de argán para despertar con una piel más hidratada, luminosa y joven.</p>
-                        <div class="blog-author">
-                            <img src="https://via.placeholder.com/50x50" alt="Pedro">
-                            <div>
-                                <span class="author-name">Pedro</span>
-                                <span class="author-role">Sales & Marketing</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-outline">Leer Más</a>
                     </div>
-                </article>
+                    <a href="#" class="btn btn-primary" style="margin-top: var(--spacing-md);">Leer Artículo Completo</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Article 3 -->
-                <article class="blog-card" data-category="profesionales">
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/400x250" alt="Tratamiento en spa">
-                    </div>
-                    <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">Profesionales</span>
-                            <span class="article-date">1 de mayo, 2024</span>
-                        </div>
-                        <h3 class="blog-title">Cómo Integrar el Aceite de Argán en tu Spa o Clínica Estética</h3>
-                        <p class="blog-excerpt">Guía completa para profesionales sobre cómo integrar el aceite de argán Kapunka en tus tratamientos y aumentar la satisfacción de tus clientes.</p>
-                        <div class="blog-author">
-                            <img src="https://via.placeholder.com/50x50" alt="Miguel">
-                            <div>
-                                <span class="author-name">Miguel</span>
-                                <span class="author-role">Operaciones</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-outline">Leer Más</a>
-                    </div>
-                </article>
-
-                <!-- Article 4 -->
-                <article class="blog-card" data-category="novedades">
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/400x250" alt="Nuevo producto Kapunka">
-                    </div>
-                    <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">Novedades</span>
-                            <span class="article-date">25 de abril, 2024</span>
-                        </div>
-                        <h3 class="blog-title">Lanzamiento: Nuevo Aceite de Argán con Romero de Kapunka</h3>
-                        <p class="blog-excerpt">Te presentamos nuestra última novedad: el aceite de argán con romero, una potente combinación para regenerar y calmar la piel sensible.</p>
-                        <div class="blog-author">
-                            <img src="https://via.placeholder.com/50x50" alt="Mónica Ruiz">
-                            <div>
-                                <span class="author-name">Mónica Ruiz</span>
-                                <span class="author-role">Fundadora</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-outline">Leer Más</a>
-                    </div>
-                </article>
-
-                <!-- Article 5 -->
-                <article class="blog-card" data-category="consejos">
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/400x250" alt="Aceite de argán para el cabello">
-                    </div>
-                    <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">Consejos</span>
-                            <span class="article-date">20 de abril, 2024</span>
-                        </div>
-                        <h3 class="blog-title">Secretos para un Cabello Saludable con Aceite de Argán</h3>
-                        <p class="blog-excerpt">Descubre los secretos para transformar tu cabello seco y dañado en una melena saludable y brillante usando aceite de argán.</p>
-                        <div class="blog-author">
-                            <img src="https://via.placeholder.com/50x50" alt="Pedro">
-                            <div>
-                                <span class="author-name">Pedro</span>
-                                <span class="author-role">Sales & Marketing</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-outline">Leer Más</a>
-                    </div>
-                </article>
-
-                <!-- Article 6 -->
-                <article class="blog-card" data-category="tratamientos">
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/400x250" alt="Tratamiento de estrías">
-                    </div>
-                    <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">Tratamientos</span>
-                            <span class="article-date">15 de abril, 2024</span>
-                        </div>
-                        <h3 class="blog-title">Tratamiento de Estrías con Aceite de Argán: Resultados Reales</h3>
-                        <p class="blog-excerpt">Te mostramos un tratamiento efectivo para reducir la apariencia de las estrías usando aceite de argán, con resultados reales y testimonios de clientes.</p>
-                        <div class="blog-author">
-                            <img src="https://via.placeholder.com/50x50" alt="Mónica Ruiz">
-                            <div>
-                                <span class="author-name">Mónica Ruiz</span>
-                                <span class="author-role">Fundadora</span>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-outline">Leer Más</a>
-                    </div>
-                </article>
+    <!-- Blog Posts Section -->
+    <section class="blog-posts-section section" id="all-posts">
+        <div class="container">
+            <div class="section-header">
+                <h2>Artículos Recientes</h2>
+                <p>Conocimiento experto sobre belleza y cuidado de la piel de lujo</p>
             </div>
             
-            <div class="text-center mt-lg">
-                <a href="#" class="btn btn-secondary">Ver Más Artículos</a>
+            <div class="grid-with-sidebar">
+                <div class="blog-content-main">
+                    <div class="grid blog-grid">
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1620916566398-39f1686d9332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beneficios del aceite de argán">
+                                <div class="blog-category">Cuidado de la Piel</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 10 Mayo 2024</span>
+                                    <span><i class="fas fa-clock"></i> 6 min lectura</span>
+                                </div>
+                                <h3 class="blog-title">5 Beneficios Científicamente Comprobados del Aceite de Argán para la Piel Madura</h3>
+                                <p class="blog-excerpt">Descubre cómo el aceite de argán puede transformar tu rutina de cuidado de la piel, combatiendo los signos del envejecimiento con resultados visibles desde la primera aplicación.</p>
+                                <div class="blog-author">
+                                    <div class="author-avatar">MR</div>
+                                    <div class="author-info">
+                                        <div class="author-name">Mónica Ruiz</div>
+                                        <div class="author-role">Directora Científica</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-text">Leer Más</a>
+                            </div>
+                        </article>
+                        
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1570294167189-281d92bf774f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tratamientos de spa">
+                                <div class="blog-category">Profesionales</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 5 Mayo 2024</span>
+                                    <span><i class="fas fa-clock"></i> 7 min lectura</span>
+                                </div>
+                                <h3 class="blog-title">Cómo Integrar Productos de Lujo en tu Spa: Guía para Profesionales</h3>
+                                <p class="blog-excerpt">Estrategias prácticas para incorporar productos premium como Kapunka en tu spa, aumentando la satisfacción del cliente y tus ingresos.</p>
+                                <div class="blog-author">
+                                    <div class="author-avatar">P</div>
+                                    <div class="author-info">
+                                        <div class="author-name">Pedro</div>
+                                        <div class="author-role">Director de Marketing</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-text">Leer Más</a>
+                            </div>
+                        </article>
+                        
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Comercio justo">
+                                <div class="blog-category">Ingredientes</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 1 Mayo 2024</span>
+                                    <span><i class="fas fa-clock"></i> 5 min lectura</span>
+                                </div>
+                                <h3 class="blog-title">El Impacto Social del Aceite de Argán: Historias de las Cooperativas Marroquíes</h3>
+                                <p class="blog-excerpt">Conoce cómo tu compra de Kapunka apoya directamente a las cooperativas de mujeres en Marruecos, creando un impacto positivo en comunidades enteras.</p>
+                                <div class="blog-author">
+                                    <div class="author-avatar">MR</div>
+                                    <div class="author-info">
+                                        <div class="author-name">Mónica Ruiz</div>
+                                        <div class="author-role">Fundadora</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-text">Leer Más</a>
+                            </div>
+                        </article>
+                        
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rutina de belleza">
+                                <div class="blog-category">Estilo de Vida</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 25 Abril 2024</span>
+                                    <span><i class="fas fa-clock"></i> 6 min lectura</span>
+                                </div>
+                                <h3 class="blog-title">Rutina de Belleza Nocterna: El Secreto para Despertar con una Piel Radiante</h3>
+                                <p class="blog-excerpt">Descubre la rutina nocturna de lujo que transformará tu piel mientras duermes, utilizando los poderosos beneficios del aceite de argán.</p>
+                                <div class="blog-author">
+                                    <div class="author-avatar">CG</div>
+                                    <div class="author-info">
+                                        <div class="author-name">Carla Gómez</div>
+                                        <div class="author-role">Experta en Belleza</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-text">Leer Más</a>
+                            </div>
+                        </article>
+                        
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ingredientes naturales">
+                                <div class="blog-category">Ingredientes</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 20 Abril 2024</span>
+                                    <span><i class="fas fa-clock"></i> 8 min lectura</span>
+                                </div>
+                                <h3 class="blog-title">La Ciencia detrás del Aceite de Argán: Componentes Activos y sus Beneficios</h3>
+                                <p class="blog-excerpt">Un análisis profundo de los componentes químicos del aceite de argán que lo convierten en uno de los ingredientes más potentes para el cuidado de la piel.</p>
+                                <div class="blog-author">
+                                    <div class="author-avatar">DR</div>
+                                    <div class="author-info">
+                                        <div class="author-name">Dr. Ricardo Méndez</div>
+                                        <div class="author-role">Dermatólogo</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-text">Leer Más</a>
+                            </div>
+                        </article>
+                        
+                        <article class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1570294167189-281d92bf774f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Negocio de belleza">
+                                <div class="blog-category">Profesionales</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="fas fa-calendar"></i> 15 Abril 2024</span>
+                                    <span><i class="fas fa-clock"></i> 7 min lectura</span>
+                                </div>
+                                <h3 class="blog-title">Marketing para Spas de Lujo: Cómo Atraer Clientes de Alto Poder Adquisitivo</h3>
+                                <p class="blog-excerpt">Estrategias de marketing efectivas para spas y clínicas que desean posicionarse en el segmento de lujo y atraer a clientes dispuestos a pagar por calidad premium.</p>
+                                <div class="blog-author">
+                                    <div class="author-avatar">P</div>
+                                    <div class="author-info">
+                                        <div class="author-name">Pedro</div>
+                                        <div class="author-role">Director de Marketing</div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-text">Leer Más</a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination" style="display: flex; justify-content: center; gap: var(--spacing-sm); margin-top: var(--spacing-xl);">
+                        <a href="#" class="btn btn-outline">Anterior</a>
+                        <a href="#" class="btn btn-primary">1</a>
+                        <a href="#" class="btn btn-outline">2</a>
+                        <a href="#" class="btn btn-outline">3</a>
+                        <a href="#" class="btn btn-outline">Siguiente</a>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="blog-sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Categorías</h3>
+                        <ul class="sidebar-list">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Tendencias (12)</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Cuidado de la Piel (18)</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Ingredientes (9)</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Profesionales (15)</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Estilo de Vida (7)</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section" style="margin-top: var(--spacing-lg);">
+                        <h3 class="sidebar-title">Artículos Populares</h3>
+                        <ul class="sidebar-list">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> El Futuro del Cuidado de la Piel</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Beneficios del Aceite de Argán</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Guía para Profesionales</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Comercio Justo en Marruecos</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Rutina de Belleza Nocturna</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-section" style="margin-top: var(--spacing-lg);">
+                        <h3 class="sidebar-title">Etiquetas Populares</h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag">aceite de argán</a>
+                            <a href="#" class="tag">lujo</a>
+                            <a href="#" class="tag">antienvejecimiento</a>
+                            <a href="#" class="tag">spa</a>
+                            <a href="#" class="tag">piel</a>
+                            <a href="#" class="tag">belleza</a>
+                            <a href="#" class="tag">natural</a>
+                            <a href="#" class="tag">profesional</a>
+                            <a href="#" class="tag">marruecos</a>
+                            <a href="#" class="tag">orgánico</a>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
@@ -262,73 +654,75 @@
     <!-- Newsletter Section -->
     <section class="newsletter-section section">
         <div class="container">
-            <div class="newsletter-content">
-                <h2>Suscríbete a Nuestro Newsletter</h2>
-                <p>Recibe consejos exclusivos, novedades y ofertas especiales directamente en tu correo.</p>
-                <form class="newsletter-form">
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Tu email" required>
-                        <button type="submit" class="btn btn-primary">Suscribirse</button>
-                    </div>
-                </form>
-                <p class="newsletter-privacy">Respetamos tu privacidad. Puedes darte de baja en cualquier momento.</p>
-            </div>
+            <h2>Suscríbete a Nuestro Newsletter</h2>
+            <p>Recibe los últimos artículos, consejos exclusivos y ofertas especiales directamente en tu correo.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Tu email profesional" required>
+                <button type="submit" class="btn btn-primary">Suscribirse</button>
+            </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-column">
-                <h4>Kapunka</h4>
-                <p>Aceite de argán médico-estético con aval científico y compromiso ético.</p>
-                <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    <!-- Luxury Footer -->
+    <footer class="footer-luxury">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>KAPUNKA</h3>
+                    <p>Aceite de argán médico-estético de lujo con aval científico y compromiso ético.</p>
                 </div>
-            </div>
-            <div class="footer-column">
-                <h4>Enlaces Rápidos</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="profesionales.html">Profesionales</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">Nosotros</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Aviso Legal</a></li>
-                    <li><a href="#">Política de Privacidad</a></li>
-                    <li><a href="#">Política de Cookies</a></li>
-                    <li><a href="#">Términos y Condiciones</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contacto</h4>
-                <div class="footer-contact">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Barcelona, España</span>
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="profesionales.html">Profesionales</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footer-legal">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                    </ul>
                 </div>
                 <div class="footer-contact">
-                    <i class="fas fa-phone"></i>
-                    <span>+34 637 520 704</span>
-                </div>
-                <div class="footer-contact">
-                    <i class="fas fa-envelope"></i>
-                    <span>info@kapunkargan.com</span>
+                    <h4>Contacto</h4>
+                    <p>Barcelona, España</p>
+                    <p>+34 637 520 704</p>
+                    <p>info@kapunkargan.com</p>
                 </div>
             </div>
-        </div>
-        <div class="container footer-bottom">
-            <p>&copy; 2024 Kapunka. Todos los derechos reservados.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kapunka. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
+    <script>
+        // Newsletter form handler
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert('¡Gracias por suscribirte! Recibirás nuestras novedades en: ' + email);
+            this.reset();
+        });
+        
+        // Category filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // Here you would normally filter the blog posts
+                console.log('Filter by:', this.textContent);
+            });
+        });
+    </script>
 </body>
 </html>

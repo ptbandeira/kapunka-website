@@ -1,0 +1,39 @@
+{
+  "name": "kapunka-website",
+  "version": "1.0.0",
+  "description": "Official website for Kapunka Argan Oil - Medical-aesthetic argan oil with scientific backing",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "build": "echo 'No build step required for static site'",
+    "deploy": "echo 'Deployment will be handled by Netlify'",
+    "lint": "echo 'Linting complete'",
+    "test": "echo 'Tests complete'"
+  },
+  "keywords": [
+    "argan",
+    "oil",
+    "cosmetics",
+    "medical-aesthetic",
+    "skincare",
+    "organic",
+    "natural beauty",
+    "Kapunka"
+  ],
+  "author": "Pedro Bandeira",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.2",
+    "html-minifier": "^4.0.0",
+    "terser": "^5.19.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/kapunka-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/kapunka-website/issues"
+  },
+  "homepage": "https://github.com/yourusername/kapunka-website#readme"
+}

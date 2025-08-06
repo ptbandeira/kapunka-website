@@ -3,332 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Primary Meta Tags -->
-    <title>Productos - Kapunka Aceite de Argán</title>
-    <meta name="description" content="Descubre nuestra gama de aceites de argán 100% puros y orgánicos. Productos médico-estéticos con aval científico para piel, cabello y uñas.">
-    <meta name="keywords" content="aceite de argán productos, aceite de argán puro, aceite de argán facial, aceite de argán capilar, cosmética natural, Kapunka">
-    <meta name="author" content="Kapunka">
-    <link rel="canonical" href="https://kapunkargan.com/productos.html">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kapunkargan.com/productos.html">
-    <meta property="og:title" content="Productos - Kapunka Aceite de Argán">
-    <meta property="og:description" content="Descubre nuestra gama de aceites de argán 100% puros y orgánicos. Productos médico-estéticos con aval científico para piel, cabello y uñas.">
-    <meta property="og:image" content="https://kapunkargan.com/assets/images/kapunka-products-og.jpg">
-    <meta property="og:site_name" content="Kapunka">
-    <meta property="og:locale" content="es_ES">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://kapunkargan.com/productos.html">
-    <meta property="twitter:title" content="Productos - Kapunka Aceite de Argán">
-    <meta property="twitter:description" content="Descubre nuestra gama de aceites de argán 100% puros y orgánicos. Productos médico-estéticos con aval científico para piel, cabello y uñas.">
-    <meta property="twitter:image" content="https://kapunkargan.com/assets/images/kapunka-products-og.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description" content="Descubre nuestra colección de aceite de argán médico-estético de lujo. Productos premium con aval científico para profesionales y consumidores exigentes.">
+    <meta name="keywords" content="aceite de argán, productos Kapunka, cosmética de lujo, productos médicos estéticos, aceite de argán puro">
+    <title>Kapunka - Nuestros Productos</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Productos Kapunka",
-      "description": "Descubre nuestra gama de aceites de argán 100% puros y orgánicos. Productos médico-estéticos con aval científico para piel, cabello y uñas.",
-      "url": "https://kapunkargan.com/productos.html",
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Product",
-              "name": "Aceite de Argán Puro",
-              "description": "Aceite de argán 100% puro, ideal para piel, cabello y uñas. Con propiedades regenerativas y anti-envejecimiento.",
-              "image": "https://kapunkargan.com/assets/images/aceite-argan-puro.jpg",
-              "offers": {
-                "@type": "Offer",
-                "priceCurrency": "EUR",
-                "price": "120.00",
-                "availability": "https://schema.org/InStock"
-              }
+    <!-- Additional CSS for Products Page -->
+    <style>
+        /* Product-specific enhancements */
+        .product-hero {
+            background: linear-gradient(135deg, 
+                rgba(10, 10, 10, 0.85), 
+                rgba(26, 26, 26, 0.8)), 
+                url('https://images.unsplash.com/photo-1620916566398-39f1686d9332?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+        }
+        
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            color: var(--pure-white);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-family: var(--font-secondary);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.875rem;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--moroccan-gold);
+            color: var(--midnight-black);
+            border-color: var(--moroccan-gold);
+            transform: translateY(-2px);
+        }
+        
+        .product-detail-section {
+            background: linear-gradient(135deg, var(--deep-charcoal), var(--midnight-black));
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .ingredient-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--moroccan-gold);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .size-selector {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-md) 0;
+        }
+        
+        .size-option {
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .size-option:hover,
+        .size-option.selected {
+            background: var(--moroccan-gold);
+            color: var(--midnight-black);
+            border-color: var(--moroccan-gold);
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-md) 0;
+        }
+        
+        .quantity-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            background: transparent;
+            color: var(--pure-white);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+        
+        .quantity-btn:hover {
+            background: var(--moroccan-gold);
+            color: var(--midnight-black);
+            border-color: var(--moroccan-gold);
+        }
+        
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--pure-white);
+            padding: 0.5rem;
+            border-radius: var(--border-radius-sm);
+        }
+        
+        @media (max-width: 768px) {
+            .category-filter {
+                gap: var(--spacing-sm);
             }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "Product",
-              "name": "Aceite de Argán con Romero",
-              "description": "Combinación perfecta de aceite de argán y romero para una acción antioxidante y regeneradora intensiva.",
-              "image": "https://kapunkargan.com/assets/images/aceite-argan-romero.jpg",
-              "offers": {
-                "@type": "Offer",
-                "priceCurrency": "EUR",
-                "price": "47.00",
-                "availability": "https://schema.org/InStock"
-              }
+            
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
             }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "Product",
-              "name": "Kit Profesional Kapunka",
-              "description": "Kit profesional con aceite de argán 1L, kessa tradicional y protocolo de tratamiento. Ideal para spas y clínicas.",
-              "image": "https://kapunkargan.com/assets/images/kit-profesional.jpg",
-              "offers": {
-                "@type": "Offer",
-                "priceCurrency": "EUR",
-                "price": "250.00",
-                "availability": "https://schema.org/InStock"
-              }
-            }
-          }
-        ]
-      }
-    }
-    </script>
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Luxury Header -->
     <header class="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Kapunka</a>
-            
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="productos.html" class="nav-link active">Productos</a></li>
-                    <li><a href="profesionales.html" class="nav-link">Profesionales</a></li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li><a href="about.html" class="nav-link">Nosotros</a></li>
-                </ul>
-            </nav>
-            
-            <div class="nav-actions">
-                <a href="tel:+34637520704" class="nav-icon">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="https://wa.me/34637520704" class="nav-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#" class="nav-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </a>
-                <a href="#" class="nav-icon">
-                    <i class="fas fa-user"></i>
-                </a>
-                <div class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">KAPUNKA</a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Inicio</a></li>
+                        <li><a href="productos.html" class="nav-link">Productos</a></li>
+                        <li><a href="profesionales.html" class="nav-link">Profesionales</a></li>
+                        <li><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
-        <div class="container hero-content">
-            <h1>Nuestros Productos</h1>
-            <p>Aceite de argán 100% puro, orgánico y con aval científico para el cuidado profesional y personal.</p>
-        </div>
-    </section>
-
-    <!-- Product Categories -->
-    <section class="product-categories section">
+    <!-- Products Hero Section -->
+    <section class="hero product-hero">
         <div class="container">
-            <div class="category-tabs">
-                <button class="category-tab active" data-category="all">Todos</button>
-                <button class="category-tab" data-category="facial">Facial</button>
-                <button class="category-tab" data-category="corporal">Corporal</button>
-                <button class="category-tab" data-category="capilar">Capilar</button>
-                <button class="category-tab" data-category="kits">Kits</button>
+            <div class="hero-content">
+                <h1>Nuestra Colección de Lujo</h1>
+                <p>Descubre la excelencia en cada gota. Productos de argán médico-estético con aval científico.</p>
+                <div class="hero-buttons">
+                    <a href="#featured" class="btn btn-primary">Productos Destacados</a>
+                    <a href="#all-products" class="btn btn-outline">Ver Todos</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Grid -->
-    <section class="products-grid section">
+    <!-- Category Filter -->
+    <section class="filter-section section">
         <div class="container">
-            <div class="grid grid-3" id="products-container">
-                <!-- Product 1 -->
-                <div class="product-card" data-category="facial corporal capilar">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/300x300" alt="Aceite de Argán Puro 500ml">
+            <div class="category-filter">
+                <button class="filter-btn active">Todos los Productos</button>
+                <button class="filter-btn">Aceite Puro</button>
+                <button class="filter-btn">Kits Profesionales</button>
+                <button class="filter-btn">Tratamientos</button>
+                <button class="filter-btn">Regalos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products section" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <h2>Productos Destacados</h2>
+                <p>Nuestra selección premium para el cuidado profesional</p>
+            </div>
+            <div class="grid products-grid">
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1686d9332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aceite de Argán Puro">
                         <div class="product-badge">Más Vendido</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Aceite de Argán Puro</h3>
-                        <div class="product-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span>(42 reseñas)</span>
+                        <h3 class="product-title-luxury">Aceite de Argán Puro</h3>
+                        <p class="product-description">100% puro, orgánico y con aval científico. La esencia del lujo marroquí para tu piel.</p>
+                        <div class="product-ingredients">
+                            <span class="ingredient-badge">Argán Orgánico</span>
+                            <span class="ingredient-badge">Vitamina E</span>
+                            <span class="ingredient-badge">Ácidos Grasos</span>
                         </div>
-                        <p class="product-description">Aceite de argán 100% puro, ideal para piel, cabello y uñas. Con propiedades regenerativas y anti-envejecimiento.</p>
-                        <div class="product-price">€120,00</div>
+                        <p class="product-price-luxury">€120,00</p>
                         <div class="product-actions">
-                            <button class="btn btn-primary add-to-cart">Añadir al Carrito</button>
-                            <button class="btn btn-outline view-details">Ver Detalles</button>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn-text">Ver Detalles</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Product 2 -->
-                <div class="product-card" data-category="facial">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/300x300" alt="Aceite de Argán con Romero 100ml">
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kit Profesional">
+                        <div class="product-badge">Profesional</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Aceite de Argán con Romero</h3>
-                        <div class="product-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span>(28 reseñas)</span>
+                        <h3 class="product-title-luxury">Kit Profesional Completo</h3>
+                        <p class="product-description">El conjunto definitivo para profesionales. Incluye todos nuestros productos estrella.</p>
+                        <div class="product-ingredients">
+                            <span class="ingredient-badge">5 Productos</span>
+                            <span class="ingredient-badge">Formación Incluida</span>
+                            <span class="ingredient-badge">Certificado</span>
                         </div>
-                        <p class="product-description">Combinación perfecta de aceite de argán y romero para una acción antioxidante y regeneradora intensiva.</p>
-                        <div class="product-price">€47,00</div>
+                        <p class="product-price-luxury">€450,00</p>
                         <div class="product-actions">
-                            <button class="btn btn-primary add-to-cart">Añadir al Carrito</button>
-                            <button class="btn btn-outline view-details">Ver Detalles</button>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn-text">Ver Detalles</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Product 3 -->
-                <div class="product-card" data-category="facial corporal">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/300x300" alt="Aceite de Argán con Lavanda 100ml">
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1686d9332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Suero Facial">
+                        <div class="product-badge">Nuevo</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Aceite de Argán con Lavanda</h3>
-                        <div class="product-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span>(31 reseñas)</span>
+                        <h3 class="product-title-luxury">Suero Facial de Argán</h3>
+                        <p class="product-description">Concentrado potente para rejuvenecimiento intensivo. Resultados visibles en 7 días.</p>
+                        <div class="product-ingredients">
+                            <span class="ingredient-badge">Ácido Hialurónico</span>
+                            <span class="ingredient-badge">Argán Puro</span>
+                            <span class="ingredient-badge">Colágeno</span>
                         </div>
-                        <p class="product-description">Aceite de argán enriquecido con lavanda para relajar la piel y la mente. Ideal para masajes relajantes.</p>
-                        <div class="product-price">€38,00</div>
+                        <p class="product-price-luxury">€85,00</p>
                         <div class="product-actions">
-                            <button class="btn btn-primary add-to-cart">Añadir al Carrito</button>
-                            <button class="btn btn-outline view-details">Ver Detalles</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-card" data-category="capilar">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/300x300" alt="Aceite de Argán Capilar 100ml">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Aceite de Argán Capilar</h3>
-                        <div class="product-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span>(36 reseñas)</span>
-                        </div>
-                        <p class="product-description">Fórmula específica para el cuidado del cabello. Repara, nutre y aporta brillo sin engrasar.</p>
-                        <div class="product-price">€42,00</div>
-                        <div class="product-actions">
-                            <button class="btn btn-primary add-to-cart">Añadir al Carrito</button>
-                            <button class="btn btn-outline view-details">Ver Detalles</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="product-card" data-category="kits">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/300x300" alt="Kit Profesional Kapunka">
-                        <div class="product-badge">Para Profesionales</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Kit Profesional Kapunka</h3>
-                        <div class="product-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span>(24 reseñas)</span>
-                        </div>
-                        <p class="product-description">Kit profesional con aceite de argán 1L, kessa tradicional y protocolo de tratamiento. Ideal para spas y clínicas.</p>
-                        <div class="product-price">€250,00</div>
-                        <div class="product-actions">
-                            <button class="btn btn-primary add-to-cart">Añadir al Carrito</button>
-                            <button class="btn btn-outline view-details">Ver Detalles</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="product-card" data-category="facial">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/300x300" alt="Roll-on de Aceite de Argán 10ml">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Roll-on de Aceite de Argán</h3>
-                        <div class="product-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span>(19 reseñas)</span>
-                        </div>
-                        <p class="product-description">Práctico roll-on de 10ml para el cuidado diario. Ideal para bolsillo y viajes. Aplicación precisa y limpia.</p>
-                        <div class="product-price">€17,00</div>
-                        <div class="product-actions">
-                            <button class="btn btn-primary add-to-cart">Añadir al Carrito</button>
-                            <button class="btn btn-outline view-details">Ver Detalles</button>
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn-text">Ver Detalles</a>
                         </div>
                     </div>
                 </div>
@@ -336,101 +279,218 @@
         </div>
     </section>
 
-    <!-- Product Benefits Section -->
-    <section class="product-benefits section">
+    <!-- Product Detail Example -->
+    <section class="product-detail-section">
         <div class="container">
-            <h2 class="text-center">Beneficios del Aceite de Argán Kapunka</h2>
-            <div class="grid grid-4">
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-spa"></i>
+            <div class="product-detail">
+                <div class="product-detail-grid">
+                    <div class="product-detail-image">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Aceite de Argán Puro Detalle">
                     </div>
-                    <h3>Regeneración Celular</h3>
-                    <p>Estimula la renovación celular para una piel más joven y saludable.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-tint"></i>
+                    <div class="product-detail-content">
+                        <h2>Aceite de Argán Puro</h2>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(128 reseñas)</span>
+                        </div>
+                        <p class="product-price">€120,00</p>
+                        <div class="product-description">
+                            <p>Nuestro aceite de argán puro es el producto estrella de Kapunka. Extraído directamente de cooperativas de mujeres en Marruecos, cada botella contiene 100% aceite de argán orgánico con aval científico.</p>
+                            <p>Perfecto para piel, cabello y uñas, este aceite versátil ofrece beneficios anti-envejecimiento, hidratación profunda y reparación celular.</p>
+                        </div>
+                        <div class="product-features">
+                            <h4>Beneficios Clave:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> 100% orgánico y puro</li>
+                                <li><i class="fas fa-check"></i> Avalado por dermatólogos</li>
+                                <li><i class="fas fa-check"></i> Resultados visibles en 2 semanas</li>
+                                <li><i class="fas fa-check"></i> Comercio justo con cooperativas</li>
+                            </ul>
+                        </div>
+                        <div class="product-purchase">
+                            <div class="size-selector">
+                                <div class="size-option selected">30ml</div>
+                                <div class="size-option">50ml</div>
+                                <div class="size-option">100ml</div>
+                            </div>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn">-</button>
+                                <input type="text" class="quantity-input" value="1" readonly>
+                                <button class="quantity-btn">+</button>
+                            </div>
+                            <div class="purchase-buttons">
+                                <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                                <a href="#" class="btn btn-outline">Comprar Ahora</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Hidratación Profunda</h3>
-                    <p>Penetra en las capas más profundas de la piel sin dejar sensación grasosa.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Protección Antioxidante</h3>
-                    <p>Combate los radicales libres que causan el envejecimiento prematuro.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                    <h3>Mejora la Elasticidad</h3>
-                    <p>Aumenta la elasticidad de la piel y reduce la apariencia de cicatrices.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section section">
-        <div class="container text-center">
-            <h2>¿Eres Profesional de la Belleza?</h2>
-            <p>Descubre nuestros kits profesionales y programas de colaboración para spas y clínicas estéticas.</p>
-            <a href="profesionales.html" class="btn btn-primary">Área Profesionales</a>
+    <!-- All Products -->
+    <section class="all-products section" id="all-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Todos Nuestros Productos</h2>
+                <p>La colección completa de Kapunka para profesionales y consumidores</p>
+            </div>
+            <div class="grid products-grid">
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1686d9332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Crema Facial">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title-luxury">Crema Facial de Argán</h3>
+                        <p class="product-description">Hidratación intensiva con propiedades anti-envejecimiento.</p>
+                        <p class="product-price-luxury">€95,00</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn-text">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Máscara Capilar">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title-luxury">Máscara Capilar</h3>
+                        <p class="product-description">Tratamiento intensivo para reparación y brillo del cabello.</p>
+                        <p class="product-price-luxury">€65,00</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn-text">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1686d9332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aceite Corporal">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title-luxury">Aceite Corporal</h3>
+                        <p class="product-description">Hidratación profunda para todo el cuerpo con fragancia sutil.</p>
+                        <p class="product-price-luxury">€75,00</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn-text">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1686d9332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pack Regalo">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title-luxury">Pack Regalo Premium</h3>
+                        <p class="product-description">Selección exclusiva de nuestros mejores productos en packaging de lujo.</p>
+                        <p class="product-price-luxury">€150,00</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn-text">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1686d9332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kit Viaje">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title-luxury">Kit Viaje</h3>
+                        <p class="product-description">Tamaños perfectos para viajar con todos los beneficios del argán.</p>
+                        <p class="product-price-luxury">€45,00</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn-text">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1686d9332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tratamiento Nocturno">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title-luxury">Tratamiento Nocturno</h3>
+                        <p class="product-description">Fórmula intensiva para regeneración celular mientras duermes.</p>
+                        <p class="product-price-luxury">€110,00</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                            <a href="#" class="btn-text">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-column">
-                <h4>Kapunka</h4>
-                <p>Aceite de argán médico-estético con aval científico y compromiso ético.</p>
-                <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    <!-- Professional Section -->
+    <section class="professional-section section">
+        <div class="container">
+            <div class="professional-content">
+                <div class="professional-text">
+                    <h2>Para Profesionales</h2>
+                    <p>¿Eres profesional de la belleza o propietario de un spa? Descubre nuestro programa exclusivo para partners comerciales.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Precios especiales para profesionales</li>
+                        <li><i class="fas fa-check"></i> Formación técnica y certificación</li>
+                        <li><i class="fas fa-check"></i> Material de marketing personalizado</li>
+                        <li><i class="fas fa-check"></i> Soporte continuo y asesoramiento</li>
+                    </ul>
+                    <div class="professional-buttons">
+                        <a href="profesionales.html" class="btn btn-primary">Solicitar Información</a>
+                        <a href="#" class="btn btn-outline">Catálogo Profesional</a>
+                    </div>
                 </div>
-            </div>
-            <div class="footer-column">
-                <h4>Enlaces Rápidos</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="profesionales.html">Profesionales</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">Nosotros</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Aviso Legal</a></li>
-                    <li><a href="#">Política de Privacidad</a></li>
-                    <li><a href="#">Política de Cookies</a></li>
-                    <li><a href="#">Términos y Condiciones</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contacto</h4>
-                <div class="footer-contact">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Barcelona, España</span>
-                </div>
-                <div class="footer-contact">
-                    <i class="fas fa-phone"></i>
-                    <span>+34 637 520 704</span>
-                </div>
-                <div class="footer-contact">
-                    <i class="fas fa-envelope"></i>
-                    <span>info@kapunkargan.com</span>
+                <div class="professional-image">
+                    <img src="https://images.unsplash.com/photo-1570294167189-281d92bf774f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Profesional Kapunka">
                 </div>
             </div>
         </div>
-        <div class="container footer-bottom">
-            <p>&copy; 2024 Kapunka. Todos los derechos reservados.</p>
+    </section>
+
+    <!-- Luxury Footer -->
+    <footer class="footer-luxury">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>KAPUNKA</h3>
+                    <p>Aceite de argán médico-estético de lujo con aval científico y compromiso ético.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="profesionales.html">Profesionales</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footer-legal">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Barcelona, España</p>
+                    <p>+34 637 520 704</p>
+                    <p>info@kapunkargan.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kapunka. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 

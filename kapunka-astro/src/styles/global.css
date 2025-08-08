@@ -167,3 +167,46 @@ section {
 .ethical-section p {
   color: var(--off-white);
 }
+
+/* Narrative image hero using Golden Hour palette */
+.hero--image {
+  position: relative;
+  min-height: 72vh;
+  display: grid;
+  align-items: center;
+  background:
+    linear-gradient(180deg, rgba(71, 71, 71, 0.55), rgba(71, 71, 71, 0.25)),
+    url("/hero.svg") center/cover no-repeat,
+    var(--bg-dark);
+}
+.hero--image .hero-content {
+  padding-top: 14vh;
+  padding-bottom: 8vh;
+}
+.section--alt {
+  background: var(--bg-light);
+}
+.section--cta {
+  background: var(--bg-dark);
+  color: var(--off-white);
+  text-align: center;
+}
+.list {
+  margin: 0;
+  padding-left: 1rem;
+  line-height: 1.8;
+}
+.center {
+  text-align: center;
+}
+.cta-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+@media (max-width: 640px) {
+  .hero--image .hero-content {
+    padding-top: 10vh;
+  }
+}

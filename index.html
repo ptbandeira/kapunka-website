@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,6 +18,8 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- AOS library for scroll animations -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     
     <!-- Fallback fonts in case Google Fonts fails -->
     <style>
@@ -65,7 +68,7 @@
     </header>
 
     <!-- Luxury Hero Section -->
-    <section class="hero">
+    <section class="hero" data-aos="fade-up">
         <div class="container">
             <div class="hero-content">
                 <h1>El Aceite de Argán Médico-Estético</h1>
@@ -79,7 +82,7 @@
     </section>
 
     <!-- Luxury Trust Indicators -->
-    <section class="trust-section">
+    <section class="trust-section" data-aos="fade-up">
         <div class="container">
             <div class="trust-grid">
                 <div class="trust-item">
@@ -103,7 +106,7 @@
     </section>
 
     <!-- Luxury Benefits Section -->
-    <section class="benefits-section section">
+    <section class="benefits-section section" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <h2>Beneficios Excepcionales</h2>
@@ -136,7 +139,7 @@
     </section>
 
     <!-- Luxury Products Section -->
-    <section class="products-section section">
+    <section class="products-section section" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <h2>Nuestra Colección</h2>
@@ -184,7 +187,7 @@
     </section>
 
     <!-- Luxury Testimonials -->
-    <section class="testimonials-section section">
+    <section class="testimonials-section section" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <h2>La Confianza de los Expertos</h2>
@@ -219,7 +222,7 @@
     </section>
 
     <!-- Luxury Ethical Section -->
-    <section class="ethical-section section">
+    <section class="ethical-section section" data-aos="fade-up">
         <div class="container">
             <div class="ethical-content">
                 <div class="ethical-text">
@@ -277,5 +280,13 @@
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
+    <!-- AOS library -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    </script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+---
+import Hero3D from "../components/Hero3D";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Inicio">
+  <section class="hero" data-aos="fade-up">
+    <div class="hero-content">
+      <h1>El Aceite de Argán Médico-Estético</h1>
+      <p>100% puro, orgánico y con denominación de origen. Cuida tu piel y tu cabello con la ciencia y la tradición de Marruecos.</p>
+      <div class="hero-buttons">
+        <a href="#metodo" class="btn-primary">Descubre el método</a>
+        <a href="#comprar" class="btn-secondary">Comprar ahora</a>
+      </div>
+    </div>
+    <Hero3D client:load />
+  </section>
+
+  <section class="benefits-section section" data-aos="fade-up">
+    <h2>Beneficios</h2>
+    <div class="benefit-cards">
+      <div class="benefit-card">
+        <h3>Regeneración celular</h3>
+        <p>Promueve la reparación de la piel y reduce la apariencia de cicatrices y estrías.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Anti-envejecimiento</h3>
+        <p>Aporta elasticidad y firmeza mientras nutre en profundidad.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Nutrición intensa</h3>
+        <p>Restaura el brillo y la suavidad del cabello y la piel secos o dañados.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ethical-section section" data-aos="fade-up">
+    <h2>Nuestro compromiso ético</h2>
+    <p>Trabajamos con cooperativas de mujeres en Marruecos para obtener aceite de argán de la más alta calidad, asegurando un comercio justo y sostenible.</p>
+  </section>
+</Layout>

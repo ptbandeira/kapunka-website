@@ -1,1 +1,18 @@
 kapunka-website/
+# OS / editor
+.DS_Store
+*.log
+
+# Node / package managers
+node_modules/
+**/node_modules/
+
+# Astro build output
+dist/
+.astro/
+**/dist/
+**/.astro/
+
+# Env files
+.env
+.env.*

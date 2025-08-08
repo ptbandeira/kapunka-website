@@ -1,20 +1,12 @@
 /* ====== GLOBAL VARIABLES & RESET ====== */
 :root {
-    /* Earthy sophistication palette */
-    /* Base neutrals */
-    --neutral-light: #D8CBC2; /* soft taupe */
-    --neutral-sand: #A18267; /* warm sand */
-    --neutral-dark: #2D241B; /* rich dark brown */
-    /* Accent greens */
-    --olive-green: #3B3418; /* deep olive */
-    --sage-green: #929C92; /* soft sage */
-    /* Whites */
+    /* Midnight Moroccan Luxury Palette */
+    --midnight-black: #0A0A0A;
+    --moroccan-gold: #D4AF37;
+    --champagne: #F7E7CE;
     --pure-white: #FFFFFF;
-    /* Map legacy variables to new palette */
-    --midnight-black: var(--neutral-dark);
-    --moroccan-gold: var(--olive-green);
-    --champagne: var(--neutral-light);
-    --deep-charcoal: var(--neutral-dark);
+    --deep-charcoal: #1A1A1A;
+    --sage-green: #2D4A2B;
     
     /* Typography */
     --font-primary: 'Cormorant Garamond', serif;
@@ -32,14 +24,12 @@
     --border-radius-md: 4px;
     --border-radius-lg: 8px;
     
-    /* Shadows - adjusted for earthy palette */
-    --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.25);
-    --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.35);
-    --shadow-accent: 0 8px 32px rgba(59, 52, 24, 0.4);
-    --shadow-luxury: 0 16px 48px rgba(0, 0, 0, 0.4);
-    /* Fallback for legacy variable --shadow-gold using the accent shadow */
-    --shadow-gold: var(--shadow-accent);
+    /* Shadows - More dramatic for luxury */
+    --shadow-sm: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 16px 48px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.5);
+    --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.4);
+    --shadow-luxury: 0 20px 60px rgba(0, 0, 0, 0.6);
     
     /* Transitions */
     --transition-fast: 0.3s ease;
@@ -167,16 +157,16 @@ a:hover {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--olive-green), var(--neutral-sand));
-    color: var(--neutral-light);
-    box-shadow: var(--shadow-accent);
+    background: linear-gradient(135deg, var(--moroccan-gold), #B8941F);
+    color: var(--midnight-black);
+    box-shadow: var(--shadow-gold);
     font-weight: 600;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(59, 52, 24, 0.6);
-    color: var(--neutral-light);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.6);
+    color: var(--midnight-black);
 }
 
 .btn-outline {
@@ -206,7 +196,7 @@ a:hover {
 }
 
 .btn-text::after {
-    content: 'â†’';
+    content: '→';
     margin-left: 5px;
     transition: margin-left var(--transition-fast);
 }

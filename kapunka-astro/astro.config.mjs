@@ -1,7 +1,8 @@
-import { defineConfig } from "astro/config";
-import react from "@astrojs/react";
+// astro.config.mjs
+import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  integrations: [react()],
-  output: "static",
+  site: 'https://kapunka-website.netlify.app',
+  output: 'static',
+  trailingSlash: false,
 });

@@ -1,41 +1,128 @@
 ---
-import Hero3D from "../components/Hero3D";
-import Layout from "../layouts/Layout.astro";
+// src/pages/index.astro
+import MainLayout from '../layouts/MainLayout.astro';
+
+const title = 'Kapunka - Aceite de Argán Médico-Estético de Lujo';
+const description = 'Aceite de Argán Médico-Estético de Lujo. 100% Puro, Orgánico con Aval Científico.';
 ---
 
-<Layout title="Inicio">
-  <section class="hero" data-aos="fade-up">
-    <div class="hero-content">
-      <h1>El Aceite de Argán Médico-Estético</h1>
-      <p>100% puro, orgánico y con denominación de origen. Cuida tu piel y tu cabello con la ciencia y la tradición de Marruecos.</p>
-      <div class="hero-buttons">
-        <a href="#metodo" class="btn-primary">Descubre el método</a>
-        <a href="#comprar" class="btn-secondary">Comprar ahora</a>
-      </div>
-    </div>
-    <Hero3D client:load />
-  </section>
+<MainLayout title={title} description={description}>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>El Aceite de Argán Médico-Estético</h1>
+                <p>100% Puro, Orgánico y con Aval Científico. La esencia del lujo marroquí para tu piel.</p>
+                <div class="hero-buttons">
+                    <a href="#benefits" class="btn btn-primary">Descubre el Método</a>
+                    <a href="/productos" class="btn btn-outline">Comprar Ahora</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="benefits-section section" data-aos="fade-up">
-    <h2>Beneficios</h2>
-    <div class="benefit-cards">
-      <div class="benefit-card">
-        <h3>Regeneración celular</h3>
-        <p>Promueve la reparación de la piel y reduce la apariencia de cicatrices y estrías.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Anti-envejecimiento</h3>
-        <p>Aporta elasticidad y firmeza mientras nutre en profundidad.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Nutrición intensa</h3>
-        <p>Restaura el brillo y la suavidad del cabello y la piel secos o dañados.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <i class="fas fa-award"></i>
+                    <span>Aval Científico</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-leaf"></i>
+                    <span>100% Orgánico</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>Comercio Justo</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-microscope"></i>
+                    <span>Calidad Premium</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="ethical-section section" data-aos="fade-up">
-    <h2>Nuestro compromiso ético</h2>
-    <p>Trabajamos con cooperativas de mujeres en Marruecos para obtener aceite de argán de la más alta calidad, asegurando un comercio justo y sostenible.</p>
-  </section>
-</Layout>
+    <!-- Benefits Section -->
+    <section class="benefits-section section" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Beneficios Excepcionales</h2>
+                <p>La ciencia de la naturaleza al servicio de tu belleza</p>
+            </div>
+            <div class="grid benefits-grid">
+                <div class="benefit-card-luxury">
+                    <div class="benefit-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Regeneración Celular</h3>
+                    <p>Estimula la renovación celular y mejora la elasticidad de la piel con resultados visibles desde la primera aplicación.</p>
+                </div>
+                <div class="benefit-card-luxury">
+                    <div class="benefit-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Reducción de Cicatrices</h3>
+                    <p>Disminuye visiblemente la apariencia de cicatrices y estrías con uso continuado, revelando una piel perfecta.</p>
+                </div>
+                <div class="benefit-card-luxury">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Anti-Envejecimiento</h3>
+                    <p>Combate los signos del envejecimiento gracias a sus poderosos antioxidantes naturales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestra Colección</h2>
+                <p>Productos de lujo para el cuidado profesional</p>
+            </div>
+            <div class="grid products-grid">
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1686d9332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aceite de Argán Puro">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title-luxury">Aceite de Argán Puro</h3>
+                        <p class="product-description">La esencia pura del lujo marroquí</p>
+                        <p class="product-price-luxury">€120,00</p>
+                        <a href="#" class="btn btn-primary">Descubrir</a>
+                    </div>
+                </div>
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kit Profesional">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title-luxury">Kit Profesional</h3>
+                        <p class="product-description">El conjunto completo para profesionales</p>
+                        <p class="product-price-luxury">€250,00</p>
+                        <a href="#" class="btn btn-primary">Descubrir</a>
+                    </div>
+                </div>
+                <div class="product-card-luxury card-luxury">
+                    <div class="product-image-luxury">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1686d9332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pack Regalo">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title-luxury">Pack Regalo</h3>
+                        <p class="product-description">El lujo hecho regalo perfecto</p>
+                        <p class="product-price-luxury">€75,00</p>
+                        <a href="#" class="btn btn-primary">Descubrir</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: var(--spacing-lg);">
+                <a href="/productos" class="btn btn-outline">Ver Todos los Productos</a>
+            </div>
+        </div>
+    </section>
+</MainLayout>

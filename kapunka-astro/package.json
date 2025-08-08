@@ -1,0 +1,23 @@
+{
+  "name": "kapunka-astro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Astro implementation of the Kapunka website with a R3F hero and updated Golden Hour palette.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^3.0.0",
+    "@astrojs/renderer-react": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@react-three/fiber": "^9.8.1",
+    "@react-three/drei": "^9.56.4",
+    "three": "^0.159.0",
+    "gsap": "^3.12.1",
+    "aos": "^2.3.4"
+  }
+}
